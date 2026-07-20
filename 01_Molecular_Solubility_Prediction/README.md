@@ -66,29 +66,45 @@ This project marks an important milestone in my Machine Learning journey. Rather
 Load Dataset
       │
       ▼
-Data Separation (X, y)
+Data Preparation
+      ├── Feature Selection (X)
+      ├── Target Selection (y)
+      └── Train-Test Split
       │
       ▼
-Train-Test Split
+Linear Regression
+      ├── Train Model
+      ├── Make Predictions
+      └── Evaluate Performance (MSE & R²)
       │
       ▼
-Train Linear Regression ──► Evaluate
+Random Forest (Baseline)
+      ├── Train Model
+      ├── Make Predictions
+      └── Evaluate Performance (MSE & R²)
       │
       ▼
-Train Random Forest (baseline) ──► Evaluate
+Baseline Model Comparison
+      └── Prediction Visualization
       │
       ▼
 Hyperparameter Tuning
-(RandomizedSearchCV)
+      └── RandomizedSearchCV (5-Fold Cross Validation)
       │
       ▼
-Train Tuned Random Forest ──► Evaluate
+Train Tuned Random Forest
+      ├── Best Estimator
+      ├── Make Predictions
+      └── Evaluate Performance (MSE & R²)
       │
       ▼
-Model Comparison
+Updated Model Comparison
+      ├── Compare All Models
+      └── Visualize Prediction Results
       │
       ▼
-Prediction Visualization
+Save Best Model
+      └── model_rf_logS_best_estimator.pkl
 ```
 
 *Note: this version does not yet include a dedicated EDA/data-cleaning step — see [Current Limitations](#-current-limitations).*
