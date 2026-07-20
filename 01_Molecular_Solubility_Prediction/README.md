@@ -14,6 +14,7 @@
 - [Project Workflow](#-project-workflow)
 - [Models Used](#-models-used)
 - [Results](#-results)
+- [Model Persistence & Inference](#-model-persistence--inference)
 - [Current Limitations](#-current-limitations)
 - [Visualizations](#-visualizations)
 - [Tech Stack](#-tech-stack)
@@ -60,7 +61,6 @@ This project marks an important milestone in my Machine Learning journey. Rather
 | `NumRotatableBonds` | Molecular flexibility |
 | `AromaticProportion` | Proportion of aromatic atoms in the molecule |
 
-## 🔄 Project Workflow
 
 ## 🔄 Project Workflow
 
@@ -113,7 +113,7 @@ Load Saved Model
       └── pickle.load()
       │
       ▼
-Make Predictions
+Model Inference
       └── Predict on unseen test samples
 ```
 
@@ -141,6 +141,24 @@ Make Predictions
 - The shallow-depth baseline Random Forest actually **underperformed** Linear Regression on the test set — a reminder that Random Forest isn't automatically better without proper tuning.
 - After applying `RandomizedSearchCV` (5-fold CV, 50 iterations), the tuned Random Forest achieved the best performance by a clear margin (Test R² 0.860 vs. 0.789).
 - **Takeaway:** hyperparameter tuning mattered more here than the choice of algorithm itself.
+
+## 💾 Model Persistence & Inference
+
+After identifying the best-performing model using **RandomizedSearchCV**, the tuned Random Forest model was serialized using Python's `pickle` module.
+
+The saved model was then loaded back into memory and used to perform predictions on unseen test samples. This demonstrates a simple **Machine Learning inference workflow**, where a trained model can be reused without retraining.
+
+### Example Inference
+
+| Actual logS | Predicted logS |
+|------------:|---------------:|
+| -3.38 | -3.084 |
+| -8.01 | -8.167 |
+| -2.16 | -1.992 |
+| -1.17 | -1.531 |
+| -0.73 | -0.492 |
+
+This verifies that the serialized model can successfully perform inference after being reloaded.
 
 ## ⚠️ Current Limitations
 
@@ -231,8 +249,11 @@ Open the notebook and run all cells sequentially.
 │       model development, hyperparameter tuning,
 │       evaluation, and visualization
 │
-├── dataset.csv
+├── delaney_solubility_with_descriptors.csv
 │   └── Delaney (ESOL) Molecular Solubility Dataset
+│
+├── model_rf_logS_best_estimator.pkl
+│   └── Serialized tuned Random Forest model
 │
 └── images/
     ├── Linear_Regression.png
@@ -254,11 +275,15 @@ These additions helped me understand *why* model optimization improves performan
 
 ## 💡 What I Learned
 
-- How to build regression models with scikit-learn.
-- How to compare multiple regression algorithms fairly.
-- How to evaluate models using MSE and R².
-- How to apply hyperparameter tuning with `RandomizedSearchCV`.
-- How to document a Machine Learning project for a GitHub portfolio.
+Throughout this project, I learned:
+
+- How to build regression models using scikit-learn.
+- How to compare multiple regression algorithms.
+- How to evaluate regression models using MSE and R² Score.
+- How to improve model performance through hyperparameter tuning with `RandomizedSearchCV`.
+- How to save trained Machine Learning models using the `pickle` module.
+- How to reload a saved model and perform inference on unseen data.
+- How to document a Machine Learning project professionally for a GitHub portfolio.
 
 More importantly, this project taught me that building a model isn't just about chasing better metrics — it's about understanding *why* a model performs the way it does, and being honest about what's still missing.
 
@@ -271,7 +296,8 @@ More importantly, this project taught me that building a model isn't just about 
 - [ ] Residual analysis
 - [ ] Additional models: XGBoost, CatBoost
 - [ ] Explainable AI (SHAP)
-- [ ] Model persistence + simple inference example
+- [ ] Deploy the trained model using Streamlit
+- [ ] Build a simple prediction interface
 
 ## 📚 Learning Resources
 
