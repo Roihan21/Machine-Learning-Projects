@@ -145,22 +145,70 @@ Prediction plots (predicted vs. experimental logS) for each model are available 
 - matplotlib
 - Jupyter Notebook
 
-## ▶️ How to Run
+# ▶️ How to Run
+
+## Option 1 — Run on Google Colab (Recommended)
+
+1. Open **`Molecular_Solubility.ipynb`** using Google Colab.
+2. Make sure the dataset (`dataset.csv`) is available in the notebook environment.
+3. Run all cells sequentially.
+4. The notebook will:
+   - Train all regression models
+   - Perform Hyperparameter Tuning
+   - Evaluate model performance
+   - Generate prediction visualizations
+
+---
+
+## Option 2 — Run Locally
+
+Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
-pip install -r requirements.txt
-jupyter notebook notebook.ipynb
+git clone https://github.com/<your-username>/Machine-Learning-Projects.git
 ```
 
-## 🗂️ Project Structure
+Navigate to the project directory:
+
+```bash
+cd Machine-Learning-Projects/01_Molecular_Solubility_Prediction
+```
+
+Install the required Python libraries:
+
+```bash
+pip install pandas numpy matplotlib scikit-learn scipy
+```
+
+Launch Jupyter Notebook:
+
+```bash
+jupyter notebook Molecular_Solubility.ipynb
+```
+
+---
+
+# 🗂️ Project Structure
 
 ```text
-├── notebook.ipynb          # Main analysis and modeling notebook
-├── images/                 # Saved prediction plots
-├── requirements.txt        # Python dependencies
-└── README.md
+01_Molecular_Solubility_Prediction/
+│
+├── README.md
+│   └── Project documentation
+│
+├── Molecular_Solubility.ipynb
+│   └── Main notebook containing data preparation,
+│       model training, evaluation, visualization,
+│       and hyperparameter tuning
+│
+├── dataset.csv
+│   └── Delaney (ESOL) Solubility Dataset
+│
+└── images/
+    ├── linear_regression_prediction.png
+    ├── random_forest_prediction.png
+    ├── tuned_random_forest_prediction.png
+    └── model_comparison.png
 ```
 
 ## 🚀 Beyond the Original Tutorial
