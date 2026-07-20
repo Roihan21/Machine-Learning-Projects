@@ -149,14 +149,15 @@ Prediction plots (predicted vs. experimental logS) for each model are available 
 
 ## Option 1 — Run on Google Colab (Recommended)
 
-1. Open **`Molecular_Solubility.ipynb`** using Google Colab.
-2. Make sure the dataset (`dataset.csv`) is available in the notebook environment.
-3. Run all cells sequentially.
+1. Open **`Molecular_Solubility.ipynb`** in Google Colab.
+2. Ensure the dataset (`dataset.csv`) is available in the notebook environment.
+3. Run all notebook cells from top to bottom.
 4. The notebook will:
-   - Train all regression models
-   - Perform Hyperparameter Tuning
-   - Evaluate model performance
-   - Generate prediction visualizations
+   - Load and prepare the dataset
+   - Train multiple regression models
+   - Perform Hyperparameter Tuning using RandomizedSearchCV
+   - Evaluate model performance using MSE and R² Score
+   - Generate prediction visualizations and model comparison plots
 
 ---
 
@@ -165,10 +166,10 @@ Prediction plots (predicted vs. experimental logS) for each model are available 
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/Machine-Learning-Projects.git
+git clone https://github.com/Roihan21/Machine-Learning-Projects.git
 ```
 
-Navigate to the project directory:
+Navigate to the project folder:
 
 ```bash
 cd Machine-Learning-Projects/01_Molecular_Solubility_Prediction
@@ -177,7 +178,7 @@ cd Machine-Learning-Projects/01_Molecular_Solubility_Prediction
 Install the required Python libraries:
 
 ```bash
-pip install pandas numpy matplotlib scikit-learn scipy
+pip install pandas numpy matplotlib scikit-learn scipy jupyter
 ```
 
 Launch Jupyter Notebook:
@@ -185,6 +186,8 @@ Launch Jupyter Notebook:
 ```bash
 jupyter notebook Molecular_Solubility.ipynb
 ```
+
+Open the notebook and run all cells sequentially.
 
 ---
 
@@ -197,20 +200,19 @@ jupyter notebook Molecular_Solubility.ipynb
 │   └── Project documentation
 │
 ├── Molecular_Solubility.ipynb
-│   └── Main notebook containing data preparation,
-│       model training, evaluation, visualization,
-│       and hyperparameter tuning
+│   └── Main notebook containing data loading,
+│       model development, hyperparameter tuning,
+│       evaluation, and visualization
 │
 ├── dataset.csv
-│   └── Delaney (ESOL) Solubility Dataset
+│   └── Delaney (ESOL) Molecular Solubility Dataset
 │
 └── images/
-    ├── linear_regression_prediction.png
-    ├── random_forest_prediction.png
-    ├── tuned_random_forest_prediction.png
-    └── model_comparison.png
+    ├── Linear_Regression.png
+    ├── Random_Forest.png
+    ├── Tuned_Random_Forest.png
+    └── Model_Comparison.png
 ```
-
 ## 🚀 Beyond the Original Tutorial
 
 This project was initially developed by following the tutorial below, up to the **Prediction Visualization** stage.
