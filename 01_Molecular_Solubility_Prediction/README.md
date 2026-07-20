@@ -1,62 +1,82 @@
 # 🧪 Predicting Molecular Solubility using Machine Learning
 
-## 📖 Project Overview
+> *My first end-to-end Machine Learning project, where I learned how to build, evaluate, and improve regression models beyond the original tutorial.*
 
-This project aims to predict the aqueous solubility (`logS`) of molecules using Machine Learning regression models.
+---
+
+# 📖 Project Overview
+
+This project predicts the aqueous solubility (`logS`) of molecules using Machine Learning regression models.
 
 Molecular solubility is an important physicochemical property in chemistry and pharmaceutical research because it helps determine whether a molecule has the potential to become a drug candidate.
 
-This project is part of my Machine Learning learning journey and focuses on understanding the complete workflow of a regression problem.
+This project marks an important milestone in my Machine Learning journey. Rather than simply training a model, my goal was to understand the complete workflow of a regression problem—from loading the dataset to evaluating and improving model performance.
 
 ---
 
 # 🎯 Objectives
 
-- Learn the Machine Learning workflow for regression problems.
-- Compare different regression algorithms.
-- Understand model evaluation using regression metrics.
-- Explore Hyperparameter Tuning to improve model performance.
+The objectives of this project are:
+
+- Understand the end-to-end Machine Learning workflow for regression problems.
+- Learn how different regression models perform on the same dataset.
+- Evaluate model performance using regression metrics.
+- Improve model performance through Hyperparameter Tuning.
+- Practice documenting a Machine Learning project as part of my portfolio.
 
 ---
 
 # 📂 Dataset
 
-Dataset Name:
+**Dataset:** Delaney Solubility Dataset
 
-**Delaney Solubility Dataset**
+### Target Variable
 
-Target Variable:
+- `logS` (Aqueous Solubility)
 
-- `logS`
-
-Features:
+### Input Features
 
 - MolLogP
 - MolWt
 - NumRotatableBonds
 - AromaticProportion
 
+The dataset contains molecular descriptors that are commonly used to predict the aqueous solubility of chemical compounds.
+
 ---
 
-# 🏗️ Project Workflow
+# 🔄 Project Workflow
 
 ```text
 Load Dataset
-        ↓
+      │
+      ▼
 Data Exploration
-        ↓
+      │
+      ▼
 Train-Test Split
-        ↓
+      │
+      ▼
 Linear Regression
-        ↓
+      │
+      ▼
 Random Forest
-        ↓
+      │
+      ▼
 Hyperparameter Tuning
-        ↓
+(RandomizedSearchCV)
+      │
+      ▼
 Model Evaluation
-        ↓
-Visualization
-        ↓
+(MSE & R² Score)
+      │
+      ▼
+Model Comparison
+      │
+      ▼
+Prediction Visualization
+      │
+      ▼
 Conclusion
 ```
 
@@ -64,16 +84,22 @@ Conclusion
 
 # 🤖 Models Used
 
-- Linear Regression
-- Random Forest
-- Random Forest (RandomizedSearchCV)
+| Model | Description |
+|--------|-------------|
+| Linear Regression | Baseline regression model |
+| Random Forest | Ensemble regression model |
+| Random Forest (RandomizedSearchCV) | Tuned Random Forest using RandomizedSearchCV |
 
 ---
 
 # 📊 Evaluation Metrics
 
+The models were evaluated using:
+
 - Mean Squared Error (MSE)
 - R² Score
+
+These metrics were used to compare model performance before and after Hyperparameter Tuning.
 
 ---
 
@@ -83,57 +109,67 @@ Conclusion
 |--------|----------:|---------:|---------:|---------:|
 | Linear Regression | 1.008 | 0.765 | 1.021 | 0.789 |
 | Random Forest | 1.028 | 0.760 | 1.408 | 0.709 |
-| Random Forest (Randomized Tuned) | **0.303** | **0.929** | **0.676** | **0.860** |
+| **Random Forest (RandomizedSearchCV)** | **0.303** | **0.929** | **0.676** | **0.860** |
+
+### Key Findings
+
+- Linear Regression provided a solid baseline.
+- Default Random Forest did not outperform Linear Regression on the test dataset.
+- After applying **RandomizedSearchCV**, the Random Forest model achieved the best overall performance.
+- Hyperparameter Tuning significantly improved the model's predictive ability.
 
 ---
 
 # 📉 Visualizations
 
-Project visualizations can be found inside the **images/** folder.
+Project visualizations are available inside the **images/** folder.
 
-Examples:
+Current visualizations include:
 
-- Actual vs Predicted
-- Model Comparison
-- Residual Analysis *(Coming Soon)*
+- Linear Regression Prediction
+- Random Forest Prediction
+- Tuned Random Forest Prediction
+- Model Performance Comparison
 
 ---
 
-# 🚀 Improvements
+# 🚀 Beyond the Original Tutorial
 
-The original tutorial stopped after the prediction visualization step.
+This project was initially developed by following the tutorial below until the **Prediction Visualization** stage.
 
-To further explore the project, I independently added:
+To deepen my understanding, I continued experimenting independently by adding:
 
 - RandomizedSearchCV
 - Hyperparameter Tuning
 - Tuned Model Evaluation
-- Model Performance Comparison
-- Additional Analysis
+- Updated Model Comparison
+- Additional Documentation
+
+These additions helped me better understand how model optimization can improve Machine Learning performance.
 
 ---
 
 # 📚 Learning Resources
 
-This project was inspired by the following educational resources.
+This project was inspired by the educational content created by **Data Professor**.
 
-### YouTube Tutorial
+### 📺 YouTube Tutorial
 
 **Build your first machine learning model in Python**
 
 https://youtu.be/29ZQ3TDGgRQ?si=bWJpY_14MABtvXVg
 
-### YouTube Channel
+### 📺 YouTube Channel
 
 Data Professor
 
 https://www.youtube.com/@DataProfessor
 
-### GitHub
+### 💻 GitHub Repository
 
 https://github.com/dataprofessor
 
-### Dataset
+### 📂 Dataset Source
 
 https://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descriptors.csv
 
@@ -141,36 +177,39 @@ https://github.com/dataprofessor/data/blob/master/delaney_solubility_with_descri
 
 # 💡 What I Learned
 
-Throughout this project I learned:
+Through this project, I learned how to:
 
-- Building regression models with Scikit-Learn
-- Comparing Linear Regression and Random Forest
-- Using MSE and R² for model evaluation
-- Applying RandomizedSearchCV
-- Understanding how hyperparameter tuning improves model performance
-- Comparing baseline and optimized models
+- Build regression models using Scikit-Learn.
+- Compare multiple regression algorithms.
+- Evaluate models using MSE and R² Score.
+- Apply Hyperparameter Tuning with RandomizedSearchCV.
+- Compare baseline and optimized models.
+- Organize a Machine Learning project using GitHub.
+
+More importantly, this project taught me that building a Machine Learning model is not only about obtaining better metrics, but also about understanding **why** a model performs better and how different techniques affect its performance.
 
 ---
 
 # 🔮 Future Improvements
 
-Some improvements I would like to explore in the future:
+As I continue learning Machine Learning, I plan to improve this project by exploring:
 
 - Feature Engineering
-- Cross Validation
 - Feature Importance Analysis
-- SHAP Explainability
-- XGBoost Comparison
-- CatBoost Comparison
+- XGBoost
+- CatBoost
+- Explainable AI (SHAP)
+- Additional Regression Models
 
 ---
 
 # 🙏 Acknowledgements
 
-I would like to express my sincere gratitude to **Data Professor** for creating high-quality educational content and openly sharing learning resources with the community.
-His tutorial provided a strong foundation for this project and helped me understand the end-to-end Machine Learning workflow.
-This project extends the original tutorial by adding Hyperparameter Tuning, additional model evaluation, and further experimentation as part of my own learning journey.
-Thank you for making Machine Learning education accessible to everyone.
+I would like to sincerely thank **Data Professor** for creating high-quality educational content and making Machine Learning more accessible to beginners.
+
+This project was inspired by the tutorial and educational resources provided by Data Professor. After completing the tutorial, I independently extended the project by experimenting with Hyperparameter Tuning, additional model evaluation, and improved documentation as part of my own learning journey.
+
+Thank you for sharing valuable knowledge with the Machine Learning community.
 
 ---
 
@@ -178,6 +217,6 @@ Thank you for making Machine Learning education accessible to everyone.
 
 **Roihan**
 
-Machine Learning Portfolio
+Aspiring Machine Learning Engineer
 
-Learning • Building • Improving 🚀
+*"Learning by building, improving through experimentation."* 🚀
