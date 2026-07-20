@@ -236,7 +236,7 @@ Open the notebook and run all cells sequentially.
 
 ---
 
-# 🗂️ Project Structure
+## 🗂️ Project Structure
 
 ```text
 01_Molecular_Solubility_Prediction/
@@ -244,23 +244,25 @@ Open the notebook and run all cells sequentially.
 ├── README.md
 │   └── Project documentation
 │
+├── images/
+│   ├── linear_regression.png
+│   ├── random_forest.png
+│   ├── tuned_random_forest.png
+│   └── model_comparison.png
+│
 ├── Molecular_Solubility.ipynb
-│   └── Main notebook containing data loading,
-│       model development, hyperparameter tuning,
-│       evaluation, and visualization
+│   └── End-to-end Machine Learning workflow including
+│       data preparation, model training,
+│       hyperparameter tuning, model persistence,
+│       inference, evaluation, and visualization
 │
 ├── delaney_solubility_with_descriptors.csv
 │   └── Delaney (ESOL) Molecular Solubility Dataset
 │
-├── model_rf_logS_best_estimator.pkl
-│   └── Serialized tuned Random Forest model
-│
-└── images/
-    ├── Linear_Regression.png
-    ├── Random_Forest.png
-    ├── Tuned_Random_Forest.png
-    └── Model_Comparison.png
+└── model_rf_logS_best_estimator.pkl
+    └── Serialized tuned Random Forest model
 ```
+
 ## 🚀 Beyond the Original Tutorial
 
 This project was initially developed by following the tutorial below, up to the **Prediction Visualization** stage.
