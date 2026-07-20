@@ -62,6 +62,8 @@ This project marks an important milestone in my Machine Learning journey. Rather
 
 ## 🔄 Project Workflow
 
+## 🔄 Project Workflow
+
 ```text
 Load Dataset
       │
@@ -105,6 +107,14 @@ Updated Model Comparison
       ▼
 Save Best Model
       └── model_rf_logS_best_estimator.pkl
+      │
+      ▼
+Load Saved Model
+      └── pickle.load()
+      │
+      ▼
+Make Predictions
+      └── Predict on unseen test samples
 ```
 
 *Note: this version does not yet include a dedicated EDA/data-cleaning step — see [Current Limitations](#-current-limitations).*
@@ -159,7 +169,8 @@ Prediction plots (predicted vs. experimental logS) for each model are available 
 - pandas, numpy
 - scikit-learn
 - matplotlib
-- Jupyter Notebook
+- Jupyter Notebook/Google Colab
+- pickle
 
 # ▶️ How to Run
 
