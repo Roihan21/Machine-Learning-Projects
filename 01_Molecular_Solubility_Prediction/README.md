@@ -291,14 +291,33 @@ More importantly, this project taught me that building a model isn't just about 
 
 ## 🔮 Future Improvements
 
-- [ ] Exploratory Data Analysis (distributions, correlations, outliers)
-- [ ] Baseline dummy regressor for context
-- [ ] Fair default-parameter Random Forest baseline
+This project will continue to evolve as I learn more Machine Learning concepts.
+
+### 📊 Data Understanding
+- [ ] Exploratory Data Analysis (EDA)
+- [ ] Analyze feature distributions
+- [ ] Correlation analysis
+- [ ] Outlier detection
+
+### ⚙️ Model Improvement
+- [ ] Add a Dummy Regressor as a baseline
+- [ ] Compare with a default Random Forest baseline
+- [ ] Perform Cross Validation for all models
+- [ ] Compare additional regression metrics (MAE, RMSE)
+
+### 🧠 Feature Engineering & Explainability
 - [ ] Feature importance analysis
+- [ ] Feature engineering
 - [ ] Residual analysis
-- [ ] Additional models: XGBoost, CatBoost
-- [ ] Explainable AI (SHAP)
-- [ ] Deploy the trained model using Streamlit
+- [ ] SHAP Explainability
+
+### 🚀 More Powerful Models
+- [ ] XGBoost
+- [ ] CatBoost
+
+### 🌐 Deployment
+- [ ] Save and version trained models
+- [ ] Deploy the model using Streamlit
 - [ ] Build a simple prediction interface
 
 ## 📚 Learning Resources
