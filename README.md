@@ -78,7 +78,7 @@ Every project is an opportunity to learn something new.
 | No | Project | Category | Status |
 |----|----------|-----------|--------|
 | 01 | Predicting Molecular Solubility using Machine Learning | Regression | ✅ Completed |
-| 02 | Coming Soon | - | ⏳ |
+| 02 | Data Preprocessing | Regression & Classification | Still On Progress |
 | 03 | Coming Soon | - | ⏳ |
 
 ---
