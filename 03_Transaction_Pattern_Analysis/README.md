@@ -16,6 +16,23 @@
 
 ---
 
+# 🏆 Official Certification & Assessment Grade
+
+![Dicoding Status](https://img.shields.io/badge/Submission-ACCEPTED-brightgreen?style=for-the-badge&logo=dicoding)
+![Grade](https://img.shields.io/badge/Grade-ADVANCED%20(5.0%2F5.0)-blue?style=for-the-badge)
+
+Proyek ini telah ditinjau dan diverifikasi secara resmi oleh tim Reviewer **Dicoding Indonesia** pada kelas *Membangun Proyek Machine Learning*, dengan meraih **Predikat Tertinggi: ADVANCED (Nilai Sempurna 5.0/5.0)** di seluruh kriteria penilaian Unsupervised & Supervised Learning:
+
+| Kriteria Penilaian | Tingkat Pencapaian | Catatan & Highlight Reviewer |
+| :--- | :---: | :--- |
+| **Kriteria 1:** EDA & Visualisasi Data | **Advanced (4/4 pts)** | Visualisasi data sangat rapi tanpa adanya label yang *overlap*. |
+| **Kriteria 2:** Pembersihan & Preprocessing | **Advanced (4/4 pts)** | Melakukan pembersihan, encoding, dan *binning* data pada fitur numerik. |
+| **Kriteria 3:** Model Clustering & PCA | **Advanced (4/4 pts)** | Mengimplementasikan reduksi dimensi PCA dan menyimpan artefak model (`PCA_model_clustering.h5`). |
+| **Kriteria 4:** Interpretasi & Inverse Cluster | **Advanced (4/4 pts)** | Mengintegrasikan data hasil *inverse* dengan kolom *Target* (`data_clustering_inverse.csv`). |
+| **Kriteria 5:** Model Klasifikasi & Tuning | **Advanced (4/4 pts)** | Melakukan *hyperparameter tuning* dan menyimpan model klasifikasi terbaik (`tuning_classification`). |
+
+---
+
 # 📖 Project Overview
 
 > Briefly describe the background of the project, the problem statement, and the overall objective.
