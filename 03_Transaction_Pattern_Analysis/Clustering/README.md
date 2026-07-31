@@ -1,6 +1,6 @@
 # 🏦 Customer Transaction Segmentation with K-Means Clustering
 
-> An unsupervised machine learning project that segments bank customers into distinct behavioral groups based on their transaction patterns — turning raw transactional data into actionable business personas.
+> An unsupervised machine learning project that segments bank customers into statistically distinct behavioral groups based on their transaction patterns — turning raw transactional data into a testable, actionable starting point for targeted business strategy.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn)
@@ -101,7 +101,7 @@ Both the main K-Means model and a secondary PCA-based K-Means model were saved w
 ---
 
 ## 💡 6. Business Insights & Recommendations
-*(Derived from `data_clustering_inverse.csv` — see the crucial explanation below)*
+*(Computed directly from `data_clustering_inverse.csv` — 1,945 records)*
 
 ### ⚠️ Why We MUST Inverse-Transform Before Business Interpretation
 
@@ -120,33 +120,64 @@ The difference is dramatic — here's the same Cluster 0 described two ways:
 | Average Transaction Amount | `-0.01` | **$255.55** |
 | Business readability | ❌ Meaningless to non-technical staff | ✅ Immediately actionable |
 
+### ⚖️ Cluster Sizes
+
+| Cluster | Customers | Share |
+|---|---|---|
+| 🟦 Cluster 0 | 980 | 50.4% |
+| 🟨 Cluster 1 | 965 | 49.6% |
+
+The two segments are almost perfectly balanced — this isn't a "small niche vs. the majority" situation, it's a genuine 50/50 split of the customer base, meaning both segments deserve equal strategic attention.
+
 ### 🧑‍💼 Cluster Profiles (Real-World Values)
 
-**🟦 Cluster 0 — "Established Professionals"**
-- **Average Age:** 45.06 years
-- **Average Account Balance:** $5,142.17
-- **Average Transaction Amount:** $255.55
-- **Dominant Profile:** Mature age group (`Dewasa`/Adult bracket), largely represented by high-tier professions such as **Doctors**
-- **Behavior:** Maintains a comparatively higher standing balance with slightly lower average transaction spend — consistent with a saver-oriented, financially stable customer base.
+| Metric (mean) | 🟦 Cluster 0 | 🟨 Cluster 1 |
+|---|---|---|
+| Customer Age | 45.06 yrs | 44.33 yrs |
+| Account Balance | $5,142.17 | $5,058.81 |
+| Transaction Amount | $255.55 | $258.15 |
+| Transaction Duration | 121.1 sec | 117.3 sec |
+| Most common Age Group | Dewasa (Adult) | Muda (Young) |
+| Most common Occupation | Doctor | Student |
 
-**🟨 Cluster 1 — "Young & Active Customers"**
-- **Average Age:** 44.33 years
-- **Average Account Balance:** $5,058.81
-- **Average Transaction Amount:** $258.15
-- **Dominant Profile:** Overwhelmingly represented by the "Young" age bracket and **Student** occupations
-- **Behavior:** Transacts slightly more frequently/actively and keeps a lower resting balance — consistent with a spender-oriented, transaction-driven customer base.
+**🟦 Cluster 0 — "Balance-Leaning Segment"**: slightly older on average, holds a marginally higher account balance, and its single most common (mode) occupation is Doctor.
 
-> 📝 **Interesting nuance:** the two clusters' *average numeric* ages look nearly identical (45.06 vs. 44.33) — if you only looked at the mean, you might conclude age doesn't matter. But the *categorical mode* (most frequent value) tells a completely different, more useful story: one cluster is dominated by Students, the other by Doctors. This is a great example of why business analysis should never rely on averages alone.
+**🟨 Cluster 1 — "Activity-Leaning Segment"**: slightly younger on average, transacts marginally more, and its single most common (mode) occupation is Student.
+
+### 📝 Honest Read of the Numbers — Don't Over-Sell the Persona
+
+This is worth being upfront about, because it's exactly the kind of nuance that separates a trustworthy analysis from a misleading one: **the gap between the two clusters on these business features is real but modest.**
+
+- The mean differences (e.g., $83 in balance, 0.7 years in age) are small compared to how spread out each cluster's own data is (e.g., account balance has a standard deviation of ~$3,900 *within* each cluster). In plain terms: a "Doctor" and a "Student" can both easily show up in either cluster — the tilt is directional, not a hard rule.
+- On `AgeGroup`, Cluster 0 is 34.0% Dewasa vs. Cluster 1 at 31.7% — a real but narrow lean, not a takeover. Occupation shows a similar pattern (Cluster 0: 27.6% Doctor vs. Cluster 1: 23.9% Doctor).
+- One feature, `LoginAttempts`, turned out to be **constant (always 1)** in the cleaned dataset — likely a side effect of the IQR outlier-removal step stripping out all the higher values. It currently adds no discriminating power and is a candidate to drop or revisit in a future iteration.
+- `Location` (43 cities) was converted with `LabelEncoder`, which assigns arbitrary sequential numbers (e.g., Boston = 3, Seattle = 31) with no real-world order. K-Means can still treat that arbitrary numeric distance as "meaningful," so part of what's separating the two clusters is likely this artificial structure rather than genuine geographic behavior. **A recommended next step** is re-encoding high-cardinality nominal features like this with one-hot or frequency/target encoding instead.
+
+**Bottom line:** the clustering is statistically sound (Silhouette Score 0.572 shows the two groups *are* geometrically well-separated), but the business story is best framed as **"two behaviorally-tilted segments"** rather than **"two dramatically different customer types."** This is a common and honest outcome in real-world segmentation work — and it still provides a usable starting point for targeted campaigns.
 
 ### 📢 Business Recommendations
 
-1. **For Cluster 0 (Established Professionals):** Prioritize wealth-management products, fixed deposits, and premium/priority banking offers. This segment values stability over frequent activity — engagement strategies should focus on trust, exclusivity, and long-term relationship building.
-2. **For Cluster 1 (Young & Active Customers):** Focus on digital-first engagement — cashback promos, student banking bundles, and micro-savings or financial literacy programs. This segment is more transaction-active and represents strong potential for building long-term loyalty early.
-3. **Operational use:** Because the clustering labels (`Target`) are already embedded in `data_clustering.csv`, this dataset can directly feed a **supervised classification model** to automatically predict which segment a *new* customer belongs to in real time.
+1. **For Cluster 0 (Balance-Leaning Segment):** Test wealth-management, fixed-deposit, and priority-banking offers here first — this group shows a mild lean toward higher balances and mature professional occupations like Doctors.
+2. **For Cluster 1 (Activity-Leaning Segment):** Test digital-first engagement, cashback promos, and student-banking bundles here first — this group shows a mild lean toward younger customers and more frequent transacting.
+3. **Treat this as a testable hypothesis, not a certainty.** Since the separation is statistically valid but demographically subtle, the recommended approach is a controlled **A/B campaign test** across both segments to confirm response differences before committing full marketing budget.
+4. **Operational use:** Because the clustering labels (`Target`) are already embedded in `data_clustering.csv` / `data_clustering_inverse.csv`, this dataset can directly feed a **supervised classification model** to automatically predict which segment a *new* customer belongs to in real time.
 
 ---
 
-## 🚀 7. How to Run
+## 🔍 7. Key Findings & Model Limitations
+
+Being transparent about a model's limitations is what makes its results trustworthy. A few things worth flagging for anyone extending this project:
+
+| Observation | Why it matters | Suggested next step |
+|---|---|---|
+| `LoginAttempts` is constant (`= 1`) after outlier removal | Contributes zero separating power to the model | Drop the column, or revisit the IQR outlier-handling threshold |
+| `Location` (43 categories) uses `LabelEncoder` | Introduces artificial numeric ordering between unrelated cities | Switch to one-hot, frequency, or target encoding |
+| Mean differences between clusters are small relative to within-cluster spread | Segment "personas" are directional tendencies, not sharply distinct customer types | Validate with A/B testing before large-scale campaign rollout; consider adding richer behavioral features (e.g., transaction frequency over time, spending category) to sharpen future segmentation |
+| Cluster split is almost exactly 50/50 | Confirms the split isn't just isolating a small group of outliers | — |
+
+---
+
+## 🚀 8. How to Run
 
 ### Prerequisites
 ```bash
@@ -185,7 +216,7 @@ predicted_cluster = model.predict(new_scaled_customer_data)
 
 ---
 
-## 📈 8. Model Evaluation Summary
+## 📈 9. Model Evaluation Summary
 
 | Metric | Value |
 |---|---|
@@ -193,6 +224,7 @@ predicted_cluster = model.predict(new_scaled_customer_data)
 | Method Used to Determine K | Elbow Method (`KElbowVisualizer`) |
 | Silhouette Score | **0.572** |
 | Final Dataset Size (post-cleaning) | 1,945 records |
+| Cluster Balance | 980 (50.4%) vs. 965 (49.6%) |
 | Dimensionality Reduction | PCA (9 features → 2 components) |
 
 ---
