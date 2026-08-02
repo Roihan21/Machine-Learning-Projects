@@ -2,9 +2,12 @@
 
 > Supervised Machine Learning stage that trains a classifier to automatically recognize a customer's behavioral segment — segments that were originally discovered through unsupervised clustering.
 
+![Dicoding Status](https://img.shields.io/badge/Submission-ACCEPTED-brightgreen?style=for-the-badge&logo=dicoding)
+![Grade](https://img.shields.io/badge/Grade-ADVANCED-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+*Final Submission for Dicoding Indonesia — "Belajar Machine Learning untuk Pemula" (Build Machine Learning Project)*
 
 ---
 
@@ -27,7 +30,7 @@
 | **Reproducible ML Engineering** | Fixed `random_state=42` throughout, `stratify=y` on the split, and every trained model serialized with `joblib` for reuse without retraining |
 | **Rigorous Evaluation** | Full `classification_report` (precision, recall, F1) rather than accuracy alone |
 | **Statistical Reasoning** | Correctly diagnosing *why* a perfect score occurred — a Voronoi-partitioned target label from K-Means — instead of reporting it uncritically |
-| **Production-Mindedness** | Flagging real deployment risks (feature-alignment on new data, concept drift) before they become bugs — see [Engineering Notes](#-engineering-notes-productionizing-this-pipeline) |
+| **Production-Mindedness** | Flagging real deployment risks (feature-alignment on new data, concept drift) before they become bugs — see [Engineering Notes](#-6-engineering-notes-productionizing-this-pipeline) |
 
 ---
 
@@ -153,7 +156,7 @@ In short: this is an **expected characteristic of a cluster-then-classify pipeli
 
 ---
 
-## 🔧 Engineering Notes: Productionizing This Pipeline
+## 🔧 6. Engineering Notes: Productionizing This Pipeline
 
 A few things worth thinking through before this moves beyond a notebook into an actual serving system:
 
@@ -163,7 +166,7 @@ A few things worth thinking through before this moves beyond a notebook into an 
 
 ---
 
-## 📁 6. File Structure
+## 📁 7. Repository Structure
 
 ```text
 Classification/
@@ -179,7 +182,7 @@ All models are serialized with **`joblib`** (`.h5` extension), allowing them to 
 
 ---
 
-## 🧰 7. Tech Stack
+## 🧰 8. Tech Stack
 
 | Category | Tools |
 |---|---|
@@ -191,7 +194,7 @@ All models are serialized with **`joblib`** (`.h5` extension), allowing them to 
 
 ---
 
-## 🚀 8. How to Run
+## 🚀 9. How to Run
 
 ### 1. Install dependencies
 ```bash
@@ -221,3 +224,6 @@ predicted_segment = model.predict(new_customer_data)
 
 **Roihan Saputra**
 *Machine Learning Engineer Enthusiast*
+GitHub: [https://github.com/RoihansLab](https://github.com/RoihansLab)
+
+Open to feedback, collaboration, or a conversation about this project — feel free to reach out via GitHub.
