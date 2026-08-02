@@ -1,6 +1,6 @@
-# 🏦 03 — Transaction Pattern Analysis
+# 🏦 Transaction Pattern Analysis — Customer Segmentation & Predictive Classification
 
-> A two-stage Machine Learning project that first **discovers** hidden customer segments in bank transaction data (unsupervised learning), then **teaches a model to recognize** those segments automatically (supervised learning).
+> A two-stage Machine Learning case study: first **discovering** hidden customer behavior segments in raw bank transaction data with no labels given, then **training a model to instantly recognize** those segments for every new customer.
 
 ![Dicoding Status](https://img.shields.io/badge/Submission-ACCEPTED-brightgreen?style=for-the-badge&logo=dicoding)
 ![Grade](https://img.shields.io/badge/Grade-ADVANCED-blue?style=for-the-badge)
@@ -9,16 +9,33 @@
 
 ---
 
-## 📖 What's in This Folder?
+## ⚡ TL;DR — 30-Second Summary
 
-This directory contains **one connected project told in two parts**. Both parts work on the same underlying bank transaction dataset, but each answers a different business question:
+- **Problem:** A bank has thousands of transactions but no existing way to group customers by behavior.
+- **Approach:** Unsupervised clustering (K-Means) to *discover* natural segments → Supervised classification (Decision Tree / Random Forest, tuned via GridSearchCV) to *predict* segment membership for new customers.
+- **Result:** Rated **Advanced** (highest tier) across all 5 official assessment criteria; 1,945 records processed end-to-end, from raw data to a deployable, saved model.
+- **What makes it stand out:** the write-up doesn't just report scores — it explains *why* they came out the way they did, including calling out where results should be read with caution. See **["What Sets This Apart"](#-what-sets-this-apart)** below.
 
-| Stage | Question it answers | Learning type |
-|---|---|---|
-| 🧩 **[`Clustering/`](./Clustering)** | *"What natural customer groups already exist in our transaction data — with no labels given?"* | Unsupervised Learning |
-| 🌲 **[`Classification/`](./Classification)** | *"Given the segments we just discovered, can a model instantly predict which segment a brand-new customer belongs to?"* | Supervised Learning |
+---
 
-In short: **Clustering finds the pattern. Classification learns to repeat it automatically.** This mirrors a very common real-world ML workflow — segment your customers once with unsupervised learning, then deploy a fast classifier so every new customer gets sorted in real time without re-running the clustering algorithm.
+## 💼 Skills Demonstrated
+
+| Competency | Where it shows up |
+|---|---|
+| **Data Cleaning & EDA** | Handling missing values, duplicates, and outliers (IQR method) on a 2,500+ row raw dataset |
+| **Feature Engineering** | Label Encoding, One-Hot Encoding, binning, and scaling — with a clear rationale for each choice |
+| **Unsupervised Learning** | K-Means clustering, optimal-K selection via Elbow Method, validated with Silhouette Score |
+| **Dimensionality Reduction** | PCA, used both for visualization and as a comparison model |
+| **Supervised Learning** | Decision Tree & Random Forest classification, hyperparameter tuning with GridSearchCV |
+| **Model Evaluation** | Precision, Recall, F1-score, and honest interpretation of what those numbers actually mean |
+| **Business Translation** | Converting scaled/statistical output back into real-world terms (age, currency, category) that a non-technical stakeholder can act on |
+| **Technical Communication** | This documentation itself — structured, audience-aware writing across three linked README files |
+
+---
+
+## 🎯 Why This Project Matters
+
+Segmenting customers is a real, recurring business need — it's the foundation for targeted marketing, personalized product offers, and smarter resource allocation. This project doesn't stop at "build a model that works." It follows the full lifecycle a data team actually goes through: clean the data, justify every preprocessing decision, validate the clustering statistically, translate results into business language, then operationalize those results with a classifier that can run on new customers in real time — no manual re-analysis required.
 
 ---
 
@@ -59,7 +76,7 @@ This submission was reviewed by the **Dicoding Indonesia** review team and rated
 └── README.md   ← you are here
 ```
 
-👉 This file is just the **map**. For the full technical breakdown of each stage — preprocessing decisions, model choices, evaluation metrics, and business interpretation — open the `README.md` inside each subfolder.
+👉 This file is the **map**. For the full technical breakdown of each stage — preprocessing decisions, model choices, evaluation metrics, and business interpretation — open the `README.md` inside each subfolder.
 
 ---
 
@@ -100,6 +117,14 @@ The clustering notebook exports `data_clustering_inverse.csv` with a `Target` co
 
 ---
 
+## 🧠 What Sets This Apart
+
+Both sub-project READMEs include something a lot of portfolio projects skip: **an honest account of where the results are strong and where they need context.** For example, the classification models score a perfect 1.00 on every metric — and instead of presenting that at face value, the write-up explains the mathematical reason why (the target label was generated by the clustering step itself, creating a perfectly separable boundary by construction) and is explicit about why that shouldn't be read the same way as 100% accuracy on an independently-collected, real-world label.
+
+This kind of self-checking is a deliberate part of the process here — treating a good-looking number as a starting question rather than a finish line.
+
+---
+
 ## 🧰 Shared Tech Stack
 
 | Category | Tools |
@@ -126,3 +151,5 @@ The clustering notebook exports `data_clustering_inverse.csv` with a `Target` co
 **Roihan Saputra**
 *Machine Learning Engineer Enthusiast*
 GitHub: [https://github.com/Roihan21](https://github.com/Roihan21)
+
+Open to feedback, collaboration, or a conversation about this project — feel free to reach out via GitHub.
