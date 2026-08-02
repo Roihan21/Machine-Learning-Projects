@@ -107,7 +107,8 @@ Data Exploration
       │
       ▼
 Concept Demonstration: Data Leakage (Overfitting)
-      ├── Train Model on 100% of Data
+      ├── Train Model on 100% of Data (model.fit(X, y))
+      ├── Evaluate Feature Importance (on this leaky model)
       ├── Predict on known data (Index 0, 50, 100)
       └── Observe 100% false confidence [1. 0. 0.]
       │
@@ -118,7 +119,6 @@ Proper Data Splitting
       ▼
 Random Forest Classifier (Rebuilt)
       ├── Train Model on X_train, y_train
-      ├── Evaluate Feature Importance
       └── Make Predictions on X_test
       │
       ▼
@@ -145,7 +145,7 @@ Save Best Model
 ## 📊 Results & Key Insights
 
 - **Accuracy Score:** The properly trained model achieved an accuracy of **~96.67%** on the unseen test set — a highly realistic and near-optimal result for this dataset.
-- **Feature importance is the key signal:** The Random Forest model revealed it heavily relies on **petal width (43.2%)** and **petal length (42.4%)** to classify the flowers, while largely ignoring sepal dimensions.
+- **Feature importance is the key signal:** The Random Forest model revealed it heavily relies on **petal width (43.2%)** and **petal length (42.4%)** to classify the flowers, while largely ignoring sepal dimensions. *(Note: this importance was read from the initial full-dataset model, computed before the leakage fix — worth re-checking on the properly split/rebuilt model as a future refinement, though Random Forest importance rankings are typically stable across refits on a dataset this clean.)*
 - **The danger of data leakage:** When the model was trained on 100% of the dataset, it merely memorized the answers. Testing it on already-seen data produced absolute confidence (`[1. 0. 0.]`). Properly evaluating it on a held-out test set instead revealed the model actually "thinks" in probabilities (e.g., `[0. 0.14 0.86]`) — a healthy sign of genuine uncertainty when facing new data, rather than memorization.
 
 ---
@@ -238,7 +238,6 @@ This project was initially developed by following the tutorial referenced below.
 
 - **Data leakage proof:** Explicitly testing specific row indices (0, 50, 100) on an overfitted model to visualize how a machine "memorizes" data.
 - **Stratified sampling:** Implemented `stratify=y` inside `train_test_split` to ensure mathematically fair class proportions across both training and test sets.
-- **Probability analysis:** Used `predict_proba` to peek into the model's "brain" and understand its confidence for each prediction — proving it doesn't just guess blindly.
 - **Model saving:** Extended the original tutorial by saving the model using `joblib`.
 
 ---
@@ -267,10 +266,8 @@ Throughout this project, I learned:
 
 This project was inspired by educational content from **Data Professor**:
 
-- 📺 *Machine Learning in Python: Building a Classification Model* (YouTube)
+- 📺 [Machine Learning in Python: Building a Classification Model](https://youtu.be/XmSlFPDjKdc) (YouTube)
 - 📺 [Data Professor YouTube channel](https://www.youtube.com/@DataProfessor)
-
-> 📎 Note: add the direct link to the specific tutorial video here once you have it handy — the placeholder link from the original draft wasn't a valid URL, so it's left out rather than guessed.
 
 ---
 
