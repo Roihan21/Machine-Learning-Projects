@@ -150,6 +150,6 @@ This kind of self-checking is a deliberate part of the process here — treating
 
 **Roihan Saputra**
 *Machine Learning Engineer Enthusiast*
-GitHub: [https://github.com/Roihan21](https://github.com/Roihan21)
+GitHub: [https://github.com/Roihan21](https://github.com/RoihansLab)
 
 Open to feedback, collaboration, or a conversation about this project — feel free to reach out via GitHub.
