@@ -213,8 +213,9 @@ Jupyter Notebook / JupyterLab
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repository-url>
-cd <your-repository-folder>
+1. Clone the repository
+git clone git clone https://github.com/RoihansLab/Machine-Learning-Projects.git
+cd (https://github.com/RoihansLab/Machine-Learning-Projects/edit/main/03_Transaction_Pattern_Analysis)
 ```
 
 ### 2. Set up environment & install dependencies
