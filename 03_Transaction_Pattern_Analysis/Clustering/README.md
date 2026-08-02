@@ -2,14 +2,40 @@
 
 > An unsupervised machine learning project that segments bank customers into statistically distinct behavioral groups based on their transaction patterns — turning raw transactional data into a testable, actionable starting point for targeted business strategy.
 
+![Dicoding Status](https://img.shields.io/badge/Submission-ACCEPTED-brightgreen?style=for-the-badge&logo=dicoding)
+![Grade](https://img.shields.io/badge/Grade-ADVANCED-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikitlearn)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
+*Final Submission for Dicoding Indonesia — "Belajar Machine Learning untuk Pemula" (Build Machine Learning Project)*
 
 ---
 
-## 📌 1. Project Overview
+## ⚡ TL;DR — 30-Second Summary
+
+- **Problem:** A bank has thousands of transaction records but no existing way to group customers by behavior.
+- **Approach:** Clean & encode the raw data → scale it with `StandardScaler` → reduce it to 2D with `PCA` → find the right number of groups with the Elbow Method → cluster with `KMeans` → validate with a Silhouette Score → inverse-transform the results back into real-world business terms.
+- **Result:** 2 statistically well-separated customer segments (Silhouette Score 0.572) discovered from 1,945 cleaned records, with a near-perfect 50/50 split — output feeds directly into a downstream classification model.
+- **What makes it stand out:** the write-up doesn't stop at "clusters found" — it explains exactly how strong the persona differences actually are, and flags the modeling choices worth revisiting. See **["Honest Read of the Numbers"](#-honest-read-of-the-numbers--dont-over-sell-the-persona)** below.
+
+---
+
+## 💼 Skills Demonstrated
+
+| Competency | Where it shows up |
+|---|---|
+| **Data Cleaning & EDA** | Handling missing values, 21 duplicate rows, and outliers (IQR method) on a 2,500+ row raw dataset |
+| **Feature Engineering** | `LabelEncoder` for categorical variables, with a clear rationale for what was dropped and why (IDs, addresses, raw dates carry no behavioral signal) |
+| **Feature Scaling** | `StandardScaler`, explained through a concrete analogy of why unscaled distance-based algorithms mislead |
+| **Dimensionality Reduction** | `PCA` to 2D, used both to visualize cluster separation and as a benchmark model in its own right |
+| **Unsupervised Learning** | `KMeans` clustering, with **K** chosen deliberately via the Elbow Method rather than guessed |
+| **Model Validation** | Silhouette Score used to statistically confirm cluster quality, not just visual inspection |
+| **Business Translation** | Inverse-transforming scaled output back into real-world units (age, currency, category) so non-technical stakeholders can act on it |
+| **Statistical Honesty** | Explicitly quantifying *how large* the persona differences really are, and calling out modeling choices (e.g., a constant feature, a high-cardinality label-encoded column) that deserve a second look |
+
+---
+
+## 📖 1. Project Overview
 
 Financial institutions sit on top of huge volumes of transaction data, but raw numbers alone don't tell a story that a marketing or risk team can act on. This project applies **unsupervised learning (K-Means Clustering)** to a bank transaction dataset (2,500+ records) in order to automatically discover **natural customer segments** — without any pre-existing labels.
 
@@ -24,7 +50,7 @@ The final deliverable is a trained, reusable clustering model plus two clean dat
 
 ---
 
-## 🗂️ 2. Repository Structure
+## 📁 2. Repository Structure
 
 | File | Description |
 |---|---|
@@ -216,7 +242,7 @@ predicted_cluster = model.predict(new_scaled_customer_data)
 
 ---
 
-## 📈 9. Model Evaluation Summary
+## 📊 9. Model Evaluation Summary
 
 | Metric | Value |
 |---|---|
@@ -232,7 +258,7 @@ predicted_cluster = model.predict(new_scaled_customer_data)
 ## 👤 Author
 
 **Roihan Saputra**
-*Data Science & Machine Learning Enthusiast*
+*Machine Learning Engineer Enthusiast*
+GitHub: [https://github.com/RoihansLab](https://github.com/RoihansLab)
 
----
-*This project was developed as part of a Machine Learning learning path (Unsupervised Learning / Clustering track), with results structured to support a downstream classification modeling task.*
+Open to feedback, collaboration, or a conversation about this project — feel free to reach out via GitHub.
