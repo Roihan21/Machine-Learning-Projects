@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:2c5364,100:00c6ff&height=220&section=header&text=The%20Ultimate%20AI%20%26%20ML%20Vault&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=From%20Statistical%20Learning%20to%20Generative%20AI&descAlignY=58&descSize=18" />
+# 🧠 The Ultimate AI & Machine Learning Vault
+### From Statistical Learning to Generative AI
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00C6FF&center=true&vCenter=true&width=650&lines=Machine+Learning+%7C+Deep+Learning+%7C+Computer+Vision;Time+Series+Forecasting+%7C+Generative+AI+%2F+LLMs;Turning+Data+Into+Decisions%2C+One+Model+at+a+Time." />
-
-<br/>
+**Machine Learning · Deep Learning · Computer Vision · Time Series Forecasting · Generative AI / LLMs**
+*Turning data into decisions, one model at a time.*
 
 ![Status](https://img.shields.io/badge/status-actively--maintained-2c5364?style=for-the-badge)
 ![Focus](https://img.shields.io/badge/current%20focus-Generative%20AI%20%26%20LLMs-00c6ff?style=for-the-badge)
@@ -145,14 +145,15 @@ Machine-Learning-Projects/
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=RoihansLab&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" width="48%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RoihansLab&layout=compact&theme=tokyonight&hide_border=true" width="35%" />
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=RoihansLab&theme=tokyonight&hide_border=true" width="60%" />
+![Followers](https://img.shields.io/github/followers/RoihansLab?label=Followers&style=for-the-badge&color=2c5364&logo=github)
+![Repo Stars](https://img.shields.io/github/stars/RoihansLab/Machine-Learning-Projects?label=Stars&style=for-the-badge&color=00c6ff)
+![Last Commit](https://img.shields.io/github/last-commit/RoihansLab/Machine-Learning-Projects?label=Last%20Commit&style=for-the-badge&color=2ea44f)
+![Top Language](https://img.shields.io/github/languages/top/RoihansLab/Machine-Learning-Projects?label=Top%20Language&style=for-the-badge&color=F7931E)
+![Repo Size](https://img.shields.io/github/repo-size/RoihansLab/Machine-Learning-Projects?label=Repo%20Size&style=for-the-badge&color=8E75B2)
 
 </div>
 
-> *Note: stats cards render automatically once the README is live on GitHub — they update in real time, no maintenance needed.*
+> 📌 These badges are powered directly by **shields.io + the GitHub API** — no third-party proxy, no downtime, updates live automatically.
 
 ---
 
@@ -171,7 +172,5 @@ Machine-Learning-Projects/
 ### 💡 *"To master AI is to understand that a well-designed neural network is just as important as a well-engineered prompt."*
 
 ⭐️ **If this repository helps you or inspires you, consider giving it a star!**
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00c6ff,100:0f2027&height=100&section=footer" />
 
 </div>
