@@ -1,75 +1,52 @@
-# 🤖 Machine Learning Portfolio
+# 🤖 Machine Learning & Generative AI Portfolio
 
-Welcome to my Machine Learning Portfolio!
+Welcome to my AI Engineering Portfolio! 
 
-This repository documents my journey of learning Machine Learning through hands-on projects. Every project represents a step forward in improving my understanding of AI, from basic models to more advanced techniques.
+This repository documents my continuous journey in mastering Artificial Intelligence. What started as an exploration of traditional Machine Learning algorithms has now evolved into architecting complex systems using **Generative AI, Large Language Models (LLMs), and API Integrations**.
 
-As I continue learning, the quality of my projects, workflow, and problem-solving approach will continue to evolve.
+As my technical stack grows, this repository serves as a living record of my transition from learning standard data modeling to building intelligent, context-aware AI applications.
 
 ---
 
 # 👋 About Me
 
 Hi! I'm **Roihan**.
+I am an Informatics / Computer Engineering student actively transitioning into the role of an **AI / Machine Learning Engineer**. 
 
-I'm currently learning Machine Learning, Deep Learning, and Artificial Intelligence with the goal of becoming an **AI / Machine Learning Engineer**.
-
-I believe the best way to learn is by building projects, asking questions, making mistakes, and understanding **why** a solution works—not just how to implement it.
+My core philosophy is that understanding *why* a system works—and how to architect it efficiently—is just as crucial as knowing how to code it. Currently, I am expanding my expertise beyond standard classification and regression models, diving deep into **Prompt Engineering, RAG (Retrieval-Augmented Generation), and LLM Orchestration** to solve real-world problems.
 
 ---
 
 # 🎯 Purpose of This Repository
 
-This repository serves as:
-
-- 📚 My Machine Learning learning journal
-- 💼 My AI portfolio
-- 🧪 A place to experiment with different algorithms and ideas
-- 📈 A record of my growth as a Machine Learning Engineer
-
-Every project is an opportunity to learn something new.
+This workspace is designed to be:
+*   📚 **A Learning Journal:** Tracking my progress from basic ML to advanced GenAI.
+*   💼 **A Professional Portfolio:** Showcasing clean code, clear documentation, and practical AI implementations.
+*   🧪 **An Experimental Sandbox:** Testing different algorithms, API behaviors (like Gemini), and system architectures.
 
 ---
 
 # 🛠️ Technologies & Tools
 
-### Programming
+### Generative AI & LLM (Current Focus)
+*   Google Gemini API (Pro & Flash models)
+*   LangChain (Memory & Orchestration)
+*   Exa AI (Semantic Web Search Integration)
+*   Prompt Engineering & Function Calling
 
-- Python
+### Core Machine Learning & Deep Learning
+*   Scikit-Learn (Classification, Regression, Clustering)
+*   TensorFlow / PyTorch *(In Progress)*
+*   YOLO / OpenCV *(Coming Soon)*
 
-### Data Processing
+### Data Processing & Visualization
+*   Python (Pandas, NumPy)
+*   Matplotlib & Seaborn
 
-- NumPy
-- Pandas
-
-### Data Visualization
-
-- Matplotlib
-- Seaborn
-
-### Machine Learning
-
-- Scikit-Learn
-- XGBoost *(Coming Soon)*
-- CatBoost *(Coming Soon)*
-
-### Deep Learning
-
-- TensorFlow *(Coming Soon)*
-- PyTorch *(Coming Soon)*
-
-### Computer Vision
-
-- OpenCV
-- YOLO *(Coming Soon)*
-
-### Development Tools
-
-- Google Colab
-- Jupyter Notebook
-- VS Code
-- Git
-- GitHub
+### Development & Architecture
+*   Python Scripting & Object-Oriented Programming
+*   Google Colab & Jupyter Notebooks
+*   Git & GitHub
 
 ---
 
@@ -85,105 +62,47 @@ Every project is an opportunity to learn something new.
 
 ---
 
-# 📖 My Learning Workflow
 
-Every project may have a different workflow depending on its complexity.
+# 📖 My Engineering Workflow
 
-As my knowledge grows, my projects will gradually include more steps such as:
+As I shift towards building AI systems rather than just training models, my workflow has evolved into two distinct pipelines:
 
-- Problem Understanding
-- Dataset Exploration
-- Data Cleaning
-- Exploratory Data Analysis (EDA)
-- Feature Engineering
-- Data Preprocessing
-- Model Building
-- Hyperparameter Tuning
-- Model Evaluation
-- Visualization
-- Error Analysis
-- Model Comparison
-- Conclusion
-- Lessons Learned
+**1. Traditional ML Pipeline:**
+`Data Exploration ➔ Preprocessing ➔ Feature Engineering ➔ Model Training ➔ Hyperparameter Tuning ➔ Evaluation`
 
-Not every project will contain all of these stages.
-
-The goal is to continuously improve my workflow and apply more advanced techniques as I learn.
+**2. Generative AI Pipeline (The Architect Approach):**
+`System Prompting ➔ Context Retrieval (RAG/Web Search) ➔ LLM API Integration ➔ Output Parsing ➔ Safety & Guardrail Testing`
 
 ---
 
 # 📚 Current Learning Roadmap
 
-## Fundamentals
+### ✅ Mastered Fundamentals
+*   Python Programming & OOP
+*   Data Manipulation (Pandas, NumPy)
+*   Exploratory Data Analysis (EDA)
+*   Traditional ML (Linear Regression, Random Forest, Clustering)
 
-- ✅ Python
-- ✅ NumPy
-- ✅ Pandas
-- ✅ Data Visualization
+### 🚀 Active Exploration (Bootcamps & Projects)
+*   **Generative AI:** Integrating LLMs via APIs (Gemini).
+*   **AI Tooling:** Implementing Function Calling and Web Search Tools (Exa).
+*   **Prompt Architecture:** Designing robust System Instructions and Parameters (Temperature, Top-P).
+*   **Contextual AI:** Building stateful chatbots using LangChain Memory.
 
-## Machine Learning
-
-- ✅ Linear Regression
-- ✅ Random Forest
-- ✅ Hyperparameter Tuning
-- ⏳ Classification
-- ⏳ Clustering
-- ⏳ Ensemble Learning
-- ⏳ Feature Engineering
-- ⏳ Model Interpretation
-
-## Deep Learning
-
-- ⏳ Neural Networks
-- ⏳ TensorFlow
-- ⏳ PyTorch
-
-## AI Specialization
-
-- ⏳ Computer Vision
-- ⏳ Natural Language Processing
-- ⏳ Time Series Forecasting
-- ⏳ Recommendation Systems
-- ⏳ MLOps
-
----
-
-# 🚀 Future Projects
-
-Some ideas I plan to build in the future:
-
-- Customer Churn Prediction
-- Loan Approval Prediction
-- Plant Disease Classification
-- Fire & Smoke Detection
-- Sentiment Analysis
-- Recommendation System
-- Object Detection
-- Face Recognition
-- Time Series Forecasting
+### ⏳ Future Horizons
+*   Computer Vision (YOLOv8 & Image Detection)
+*   AI-Driven IoT Integration
+*   MLOps & Model Deployment
 
 ---
 
 # 💡 Learning Philosophy
 
-My goal isn't simply to build models with high accuracy.
+> *"Don't just build the model; architect the entire system."*
 
-I want to understand:
+My goal isn't simply to achieve high accuracy on a static dataset. I want to understand the infrastructure behind the intelligence:
+*   How to mitigate LLM hallucinations through better context (RAG).
+*   When to use lightweight models (Flash) for speed versus heavy models (Pro) for complex reasoning.
+*   How to build applications that are secure, scalable, and genuinely useful.
 
-- Why a model works
-- Why one algorithm performs better than another
-- When a model should be used
-- How to improve model performance
-- How Machine Learning solves real-world problems
-
-I believe curiosity and critical thinking are more valuable than memorizing algorithms.
-
----
-
-# 📈 Progress
-
-This repository will continue to evolve alongside my learning journey.
-
-Each new project is expected to be better than the previous one—not only in performance, but also in analysis, workflow, documentation, and problem-solving ability.
-
-Thank you for visiting my Machine Learning journey! 🚀
+Thank you for visiting my learning workspace. Feel free to explore the code! 🚀
