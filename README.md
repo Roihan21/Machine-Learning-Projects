@@ -78,8 +78,10 @@ Every project is an opportunity to learn something new.
 | No | Project | Category | Status |
 |----|----------|-----------|--------|
 | 01 | Predicting Molecular Solubility using Machine Learning | Regression | ✅ Completed |
-| 02 | Data Preprocessing | Regression & Classification | Still On Progress |
+| 02 | Data Preprocessing | Regression & Classification | ✅ Completed |
 | 03 | 03_Transaction_Pattern_Analysis | Clustering & Classification | ✅ Completed |
+| 04 | 04_Building_Classification_Mode | Classification | ✅ Completed |
+| 05 | 05_LLM_Based_Tools_and_Gemini_API_Integration_for_Data_Scientists_From_Hacktiv8_Indonesia_Class | Clustering & Classification | Still On Progres... |
 
 ---
 
