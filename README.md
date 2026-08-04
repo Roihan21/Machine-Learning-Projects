@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧠 The Ultimate AI & Machine Learning Vault
+# 🧠 The AI & Machine Learning Vault
 ### From Statistical Learning to Generative AI
 
 **Machine Learning · Deep Learning · Computer Vision · Time Series Forecasting · Generative AI / LLMs**
