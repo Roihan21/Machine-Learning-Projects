@@ -267,16 +267,6 @@ Throughout this project, I learned:
 
 ---
 
-## 🔮 Future Improvements
-
-- [ ] Add k-fold cross-validation instead of a single train-test split for more stable rankings.
-- [ ] Add additional metrics: Precision, Recall, F1-Score, and ROC-AUC.
-- [ ] Apply hyperparameter tuning (`GridSearchCV`) to the top-performing models.
-- [ ] Re-run the same benchmarking pipeline on a real-world dataset to see if the same patterns hold.
-- [ ] Visualize decision boundaries for a subset of models, similar to scikit-learn's official classifier comparison example.
-
----
-
 ## 📚 Learning Resources
 
 This project draws inspiration from:
