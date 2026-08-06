@@ -123,7 +123,19 @@ Machine-Learning-Projects/
 │
 ├── 03_Transaction_Pattern_Analysis/
 │   ├── Classification/
+│   │   ├── [Klasifikasi]_Submission_Akhir_BMLP_Roihan_Saputra.ipynb
+│   │   ├── data_clustering_inverse.csv
+│   │   ├── decision_tree_model.h5
+│   │   ├── explore_RandomForest_classification.h5
+│   │   ├── tuning_classification.h5
+│   │   └── README.md
 │   ├── Clustering/
+│   │   ├── [Clustering]_Submission_Akhir_BMLP_Roihan_Saputra.ipynb
+│   │   ├── data_clustering.csv
+│   │   ├── data_clustering_inverse.csv
+│   │   ├── model_clustering.h5
+│   │   ├── PCA_model_clustering.h5
+│   │   └── README.md
 │   └── README.md
 │
 ├── 04_Building_Classification_Model/
